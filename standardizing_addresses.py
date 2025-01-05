@@ -25,7 +25,7 @@ df['Postal Code'] = df['Postal Code'].astype(str)
 df["Address"] = df['Full address'] + ',' + df['Postal Code'] + ',' + df['City'] + ',' +'BC' + ',' +'Canada'
 
 
-google_api_key = "AIzaSyCSRkMkl_MxirUudVG3QLL-RzoKjCHQ-OQ"
+google_api_key = "google_api_key"
 
 def get_address_details_using_google(address):
     try:
