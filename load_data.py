@@ -25,15 +25,15 @@ import os
 
 
 
-driver = "ODBC+Driver+17+for+SQL+Server"
+driver = "driver"
 
-#cnxn = pyodbc.connect(driver="ODBC Driver 17 for SQL Server", host="db30", database="TSBC_BCA",
-#                      trusted_connection="yes", user="SAFETY\hviseh@", password="")
+#cnxn = pyodbc.connect(driver=driver, host="host", database="database",
+#                      trusted_connection="yes", user="user", password="")
 
-engine = create_engine(f'mssql+pyodbc://SAFETY\hviseh@db30/TSBC_BCA?trusted_connection=yes&driver={driver}')
+engine = create_engine(f'mssql+pyodbc:?trusted_connection=yes&driver={driver}')
 
 
-#engine = create_engine('mssql+pyodbc://SAFETY\hviseh@/db30/TSBC_BCA?trusted_connection=yes')
+#engine = create_engine('mssql+pyodbc:?trusted_connection=yes')
 sql = """
 
 SELECT [STREET_NUMBER]
@@ -133,5 +133,5 @@ merged_df.to_csv(r"C:\Users\hviseh\projects\BCDATA_Eval\bcdata_eval\final_data_b
 
 
 
-#subset_merged_df.to_csv("/home/hviseh@SAFETY.BCSA/Projects")
+#subset_merged_df.to_csv("/Projects")
 
